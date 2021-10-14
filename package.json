@@ -1,0 +1,25 @@
+{
+  "name": "robospark-2021-ft-google-facebook-auth",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RoboSpark-2021/robospark-2021-FT-Google-Facebook-Auth.git"
+  },
+  "author": "Soumil",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RoboSpark-2021/robospark-2021-FT-Google-Facebook-Auth/issues"
+  },
+  "homepage": "https://github.com/RoboSpark-2021/robospark-2021-FT-Google-Facebook-Auth#readme",
+  "dependencies": {
+    "cookie-session": "^1.4.0",
+    "express": "^4.17.1",
+    "passport": "^0.5.0",
+    "passport-google-oauth2": "^0.2.0"
+  }
+}
