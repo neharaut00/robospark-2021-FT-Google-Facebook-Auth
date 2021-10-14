@@ -10,7 +10,7 @@
     "type": "git",
     "url": "git+https://github.com/RoboSpark-2021/robospark-2021-FT-Google-Facebook-Auth.git"
   },
-  "author": "Soumil",
+  "author": "Omkar Jahagirdar",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/RoboSpark-2021/robospark-2021-FT-Google-Facebook-Auth/issues"
@@ -20,6 +20,7 @@
     "cookie-session": "^1.4.0",
     "express": "^4.17.1",
     "passport": "^0.5.0",
-    "passport-google-oauth2": "^0.2.0"
+    "passport-google-oauth2": "^0.2.0",
+    "passport-facebook": "^3.0.0"
   }
 }
