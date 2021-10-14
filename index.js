@@ -33,6 +33,16 @@ app.use(passport.session());
 // server static files (CSS/Images)
 app.use(express.static(__dirname + '/public'));
 
+function requireHTTPS(req, res, next) {
+    // The 'x-forwarded-proto' check is for Heroku
+    if (!req.secure && req.get('x-forwarded-proto') !== 'https' && process.env.NODE_ENV !== "development") {
+        return res.redirect('https://' + req.get('host') + req.url);
+    }
+    next();
+}
+
+app.use(requireHTTPS);
+
 const port = process.env.PORT || 3000
 
 app.get("/", (req, res) => {
