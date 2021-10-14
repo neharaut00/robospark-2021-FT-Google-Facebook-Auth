@@ -5,9 +5,11 @@ const { clientID, clientSecret } = require("./secrets.json");
 passport.serializeUser(function(user, done) {
   done(null, user);
 });
+
 passport.deserializeUser(function(user, done) {
   done(null, user);
 });
+
 passport.use(new FacebookStrategy({
   clientID,
   clientSecret,
@@ -16,4 +18,5 @@ passport.use(new FacebookStrategy({
 function(accessToken, refreshToken, profile, done) {
   return done(null, profile);
 }
+
 ));
