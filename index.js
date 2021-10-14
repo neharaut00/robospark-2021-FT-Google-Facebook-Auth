@@ -7,7 +7,7 @@ require('./passport');
 const app = express();
 
 var options = {
-	root: path.join(__dirname)
+    root: path.join(__dirname)
 };
 
 app.use(cookieSession({
@@ -16,8 +16,8 @@ app.use(cookieSession({
 }))
 
 app.use(cookieSession({
-	name: 'facebook-auth-session',
-	keys: ['fbLogin']
+    name: 'facebook-auth-session',
+    keys: ['fbLogin']
 }))
 
 const isLoggedIn = (req, res, next) => {
@@ -30,12 +30,14 @@ const isLoggedIn = (req, res, next) => {
 
 app.use(passport.initialize());
 app.use(passport.session());
+// server static files (CSS/Images)
+app.use(express.static(__dirname + '/public'));
 
 const port = process.env.PORT || 3000
 
 app.get("/", (req, res) => {
     // res.send("You are not logged in")
-	res.sendFile('templates/login.html', options);
+    res.sendFile('templates/login.html', options);
 })
 
 app.get("/failed", (req, res) => {
@@ -64,9 +66,9 @@ app.get('/google-callback',
 app.get('/facebook', passport.authenticate('facebook'));
 
 app.get('/fb-callback', passport.authenticate('facebook', { failureRedirect: '/failed' }),
-	function (req, res) {
-		res.redirect('/success');
-	});
+    function(req, res) {
+        res.redirect('/success');
+    });
 
 app.get("/logout", (req, res) => {
     req.session = null;
